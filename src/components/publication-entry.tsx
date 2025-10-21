@@ -75,9 +75,10 @@ export function PublicationEntry({
           )}
         </div>
         {publication.tldr && (
-          <p className="text-sm italic text-zinc-600 mt-4">
-            {publication.tldr}
-          </p>
+          <p 
+            className="text-sm italic text-zinc-600 mt-4"
+            dangerouslySetInnerHTML={{ __html: publication.tldr }}
+          />
         )}
       </div>
     </div>

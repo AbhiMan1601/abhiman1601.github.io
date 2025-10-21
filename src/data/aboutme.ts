@@ -18,22 +18,22 @@ export interface AboutMe {
 }
 
 export const aboutMe: AboutMe = {
-  name: "Jane R. Smith",
-  title: "Ph.D. Candidate",
-  institution: "Stanford University",
+  name: "Abhimanyu Nag",
+  title: "MITACS Fellow",
+  institution: "University of Alberta",
   // Note that links work in the description
   description:
-    "I'm a final-year <a href='https://www.stanford.edu'>PhD candidate</a> working at the intersection of causal inference and machine learning. My research focuses on developing robust, interpretable systems that can reason about cause and effect in complex environments.",
-  email: "______@stanford.edu",
+    "I'm a MITACS Fellow under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences, University of Alberta, Canada. I was Chief Scientist at Antler-backed Chainrisk Labs back in the old days where I was leading innovation in preventing economic exploits and attacks in decentralized markets. After that I joined Pantera Capital's Hedge Fund TanX as Lead Risk Simulations to help traders make better decisions on the floor.",
+  email: "nag1[at]ualberta[dot]ca",
   imageUrl:
-    "https://images.unsplash.com/photo-1581481615985-ba4775734a9b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  googleScholarUrl: "https://scholar.google.com/citations?user=bWtMl_MAAAAJ",
-  githubUsername: "janesmith",
-  linkedinUsername: "janesmith",
-  twitterUsername: "janesmith",
-  blogUrl: "https://",
-  cvUrl: "https://",
-  institutionUrl: "https://www.stanford.edu",
+    "https://ibb.co/3DWNN1X",
+  googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",
+  githubUsername: "AbhiMan1601",
+  linkedinUsername: "abhimanyu-nag-682747201",
+  twitterUsername: "AbhiMan1601",
+  blogUrl: "https://functor.network/user/3197/entries",
+  // cvUrl: "https://",
+  institutionUrl: "https://www.ualberta.ca",
   // altName: "",
-  // secretDescription: "I like dogs.",
+  funDescription: "Security and Risk Management • Stochastic Processes • Dynamical Systems • Algorithmic Game Theory • Mechanism Design • Information Economics • Contract Theory • Differential Privacy • Economics of Security",
 };
