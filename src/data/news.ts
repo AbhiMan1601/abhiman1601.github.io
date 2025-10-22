@@ -19,7 +19,7 @@ export const newsData: News[] = [
   },
   {
     date: "August 2025",
-    title: "Big No No: Why Consensus Insurance Markets Are a Disaster Waiting to Happen",
+    title: "Why Consensus Insurance Markets Are a Disaster Waiting to Happen",
     description: "Published analysis revealing how attackers can weaponize insurance policies to slash their attack costs to near-zero while maximizing system-wide damage. Introduced the kamikaze attack model and proved fundamental impossibility results for naive insurance designs. Special thanks to collaborators from Stanford, Columbia, University of Toronto, and Othentic for their insights.",
     link: "https://functor.network/user/3197/entry/1304",
   },
