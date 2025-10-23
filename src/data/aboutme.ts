@@ -25,8 +25,7 @@ export const aboutMe: AboutMe = {
   description:
     "I'm a MITACS Fellow under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences, University of Alberta, Canada. I was Chief Scientist at Antler-backed Chainrisk Labs back in the old days where I was leading innovation in preventing economic exploits and attacks in decentralized markets. After that I joined Pantera Capital's Hedge Fund TanX as Lead Risk Simulations to help traders make better decisions on the floor.",
   email: "nag1[at]ualberta[dot]ca",
-  imageUrl:
-    "https://ibb.co/3DWNN1X",
+  imageUrl:"https://i.ibb.co/RGG1gyHT/unnamed.jpg",
   googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",
   githubUsername: "AbhiMan1601",
   linkedinUsername: "abhimanyu-nag-682747201",
