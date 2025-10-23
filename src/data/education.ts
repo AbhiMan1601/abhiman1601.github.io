@@ -15,6 +15,12 @@ export const educationData: Education[] = [
     degree: "BSc. in Statistics",
     advisor: "Prof. Arno Berger and Prof. Michael Kouritzin",
   },
+  {
+    year: "2025",
+    institution: "Duke University",
+    degree: "COMPSCI 584: Foundations of Blockchains",
+    advisor: "Invited by Prof Kartik Nayak to audit the course as a guest professional student",
+  },
   // {
   //   year: "2017—2021",
   //   institution: "Massachusetts Institute of Technology",
