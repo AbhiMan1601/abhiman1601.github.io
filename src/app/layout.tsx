@@ -112,6 +112,7 @@ export default function RootLayout({
             sameAs.push(`https://github.com/${aboutMe.githubUsername}`);
           if (aboutMe.linkedinUsername)
             sameAs.push(`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`);
+          const logoUrl = aboutMe.imageUrl || undefined;
           const personLd = {
             "@context": "https://schema.org",
             "@type": "Person",
@@ -120,15 +121,47 @@ export default function RootLayout({
             jobTitle: aboutMe.title,
             affiliation: aboutMe.institution || undefined,
             url: siteUrl,
-            image: aboutMe.imageUrl || undefined,
+            image: logoUrl,
             sameAs: sameAs.length > 0 ? sameAs : undefined,
           };
+          const orgLd = {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: aboutMe.name,
+            url: siteUrl,
+            logo: logoUrl,
+            sameAs: sameAs.length > 0 ? sameAs : undefined,
+          };
+          const webSiteLd = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: metaTitle,
+            url: siteUrl,
+            publisher: {
+              "@type": "Organization",
+              name: aboutMe.name,
+              url: siteUrl,
+              logo: logoUrl,
+            },
+          };
           return (
-            <script
-              key="ld-person"
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
-            />
+            <>
+              <script
+                key="ld-person"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+              />
+              <script
+                key="ld-org"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
+              />
+              <script
+                key="ld-website"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteLd) }}
+              />
+            </>
           );
         })()}
       </head>
