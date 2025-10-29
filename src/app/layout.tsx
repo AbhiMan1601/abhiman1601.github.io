@@ -25,11 +25,72 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
+function stripTags(input: string): string {
+  return input.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+}
+
+const SITE_CANONICAL_PATH = "/abhiman1601.github.io/";
+const SITE_BASE = "https://abhiman1601.github.io";
+const siteUrl = `${SITE_BASE}${SITE_CANONICAL_PATH}`;
+const rawDescription = customMetadata.description || aboutMe.description || "";
+const metaDescription = stripTags(rawDescription).slice(0, 160);
+const metaTitle = customMetadata.title || aboutMe.name;
+
 export const metadata: Metadata = {
-  title: customMetadata.title || aboutMe.name,
-  description: customMetadata.description || aboutMe.description,
+  metadataBase: new URL(SITE_BASE),
+  alternates: {
+    canonical: SITE_CANONICAL_PATH,
+  },
+  title: {
+    default: metaTitle,
+    template: `%s | ${aboutMe.name}`,
+  },
+  description: metaDescription,
   icons: {
     icon: "/favicon.ico",
+  },
+  keywords: [
+    aboutMe.name,
+    aboutMe.title,
+    aboutMe.institution,
+    "research",
+    "publications",
+    "experience",
+    "portfolio",
+  ].filter(Boolean) as string[],
+  authors: [{ name: aboutMe.name }],
+  creator: aboutMe.name,
+  publisher: aboutMe.institution,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: aboutMe.name,
+    title: metaTitle,
+    description: metaDescription,
+    images: aboutMe.imageUrl
+      ? [
+          {
+            url: aboutMe.imageUrl,
+            width: 1200,
+            height: 630,
+            alt: aboutMe.name,
+          },
+        ]
+      : undefined,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: metaTitle,
+    description: metaDescription,
+    creator: aboutMe.twitterUsername
+      ? `@${aboutMe.twitterUsername}`
+      : undefined,
+    site: aboutMe.twitterUsername ? `@${aboutMe.twitterUsername}` : undefined,
+    images: aboutMe.imageUrl ? [aboutMe.imageUrl] as string[] : undefined,
   },
 };
 
@@ -40,6 +101,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {(() => {
+          const sameAs: string[] = [];
+          if (aboutMe.blogUrl) sameAs.push(aboutMe.blogUrl);
+          if (aboutMe.googleScholarUrl) sameAs.push(aboutMe.googleScholarUrl);
+          if (aboutMe.twitterUsername)
+            sameAs.push(`https://twitter.com/${aboutMe.twitterUsername}`);
+          if (aboutMe.githubUsername)
+            sameAs.push(`https://github.com/${aboutMe.githubUsername}`);
+          if (aboutMe.linkedinUsername)
+            sameAs.push(`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`);
+          const personLd = {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: aboutMe.name,
+            alternateName: aboutMe.altName || undefined,
+            jobTitle: aboutMe.title,
+            affiliation: aboutMe.institution || undefined,
+            url: siteUrl,
+            image: aboutMe.imageUrl || undefined,
+            sameAs: sameAs.length > 0 ? sameAs : undefined,
+          };
+          return (
+            <script
+              key="ld-person"
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+            />
+          );
+        })()}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} ${ptSerif.variable} antialiased`}
       >
