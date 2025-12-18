@@ -16,17 +16,22 @@ export function ThemeToggle() {
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       setIsDark(true);
       document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    
+    if (newIsDark) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -34,7 +39,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800">
-        <Sun size={18} className="text-zinc-600" />
+        <Sun size={18} className="text-zinc-600 dark:text-zinc-400" />
       </button>
     );
   }
@@ -42,10 +47,12 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="group relative p-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-all duration-300 shadow-sm hover:shadow-md"
+      type="button"
+      className="group relative p-2.5 md:p-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 active:scale-95 transition-all duration-300 shadow-sm hover:shadow-md touch-manipulation"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      style={{ WebkitTapHighlightColor: 'transparent' }}
     >
-      <div className="relative w-5 h-5">
+      <div className="relative w-5 h-5 flex items-center justify-center">
         <Sun 
           size={20} 
           className={`absolute inset-0 text-amber-500 transition-all duration-300 ${
@@ -62,5 +69,6 @@ export function ThemeToggle() {
     </button>
   );
 }
+
 
 

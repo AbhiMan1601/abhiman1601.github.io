@@ -117,15 +117,15 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
         <div className="space-y-1.5 text-xs">
           <a
             href={`mailto:${aboutMe.email}`}
-            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors break-all"
           >
             <Mail size={12} />
-            {aboutMe.email}
+            <span className="text-[10px] md:text-xs">{aboutMe.email}</span>
           </a>
           {aboutMe.googleScholarUrl && (
             <a
               href={aboutMe.googleScholarUrl}
-              className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -137,7 +137,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.twitterUsername && (
               <a
                 href={`https://twitter.com/${aboutMe.twitterUsername}`}
-                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Twitter"
@@ -148,7 +148,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.githubUsername && (
               <a
                 href={`https://github.com/${aboutMe.githubUsername}`}
-                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
@@ -159,7 +159,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.linkedinUsername && (
               <a
                 href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`}
-                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="LinkedIn"
@@ -170,7 +170,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             {aboutMe.cvUrl && (
               <a
                 href={aboutMe.cvUrl}
-                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="CV"

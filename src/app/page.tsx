@@ -20,12 +20,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFCF8] dark:bg-[#0f0f0f] transition-colors duration-300">
       {/* Theme Toggle */}
-      <div className="fixed top-6 right-6 z-50">
+      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
         <ThemeToggle />
       </div>
       
       {/* Don't have a great call on whether max-w-screen-xl is better */}
-      <div className="max-w-screen-lg mx-auto px-8 py-24">
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-24">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
           {/* Left Column - Fixed Info */}
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
 
           {/* Right Column - Scrolling Content */}
-          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-24">
+          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-12 md:space-y-24">
             {/* About section is typically first */}
             {aboutMe.description && (
               <section>
@@ -56,10 +56,10 @@ export default function Home() {
                   return (
                     newsData.length > 0 && (
                       <section key={sectionName} id="news">
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
+                        <h2 className="font-serif text-l mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
                           News
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {newsData.map((news, index) => (
                             <div key={index}>
                               <NewsEntry news={news} />
@@ -73,10 +73,10 @@ export default function Home() {
                   return (
                     educationData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-zinc-700 dark:text-zinc-300 mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-zinc-700 dark:text-zinc-300 mb-6 md:mb-12 tracking-wide uppercase">
                           Education
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {educationData.map((education, index) => (
                             <EducationEntry key={index} education={education} />
                           ))}
@@ -89,7 +89,7 @@ export default function Home() {
                   const sortedPubs = sortPublicationsByDate(publicationData);
                   const featuredPublications = sortedPubs.slice(0, 3);
                   return (
-                    <div key={sectionName} className="space-y-24">
+                    <div key={sectionName} className="space-y-12 md:space-y-24">
                       {publicationData.length > 0 && (
                         <section id="publications">
                           <div className="flex items-center justify-between mb-8">
@@ -107,7 +107,7 @@ export default function Home() {
                               />
                             </Link>
                           </div>
-                          <div className="divide-y divide-zinc-100 dark:divide-zinc-800 -mx-2">
+                          <div className="divide-y divide-zinc-100 dark:divide-zinc-800 -mx-2 md:-mx-2">
                             {featuredPublications.map((publication, index) => (
                               <CitationEntry 
                                 key={index} 
@@ -136,10 +136,10 @@ export default function Home() {
                       {/* Talks Section */}
                       {talksData.length > 0 && (
                         <section id="talks">
-                          <h2 className="font-serif text-l mb-8 tracking-wide uppercase text-zinc-900 dark:text-white">
+                          <h2 className="font-serif text-l mb-6 md:mb-8 tracking-wide uppercase text-zinc-900 dark:text-white">
                             Talks
                           </h2>
-                          <div className="space-y-12">
+                          <div className="space-y-8 md:space-y-12">
                             {talksData.map((talk, index) => (
                               <div key={index} className="space-y-4">
                                 <div className="video-container aspect-video w-full">
@@ -169,10 +169,10 @@ export default function Home() {
                   return (
                     experienceData.length > 0 && (
                       <section key={sectionName} id="experience">
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
+                        <h2 className="font-serif text-md mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
                           Experience
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {experienceData.map((experience, index) => (
                             <ExperienceEntry
                               key={index}
@@ -187,10 +187,10 @@ export default function Home() {
                   return (
                     portfolioData.length > 0 && (
                       <section key={sectionName} id="code">
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
+                        <h2 className="font-serif text-md mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
                           Code
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {portfolioData.map((portfolio, index) => (
                             <PortfolioEntry key={index} portfolio={portfolio} />
                           ))}

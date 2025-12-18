@@ -41,7 +41,7 @@ export default function PublicationsPage() {
       
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur-lg bg-[#FFFCF8]/80 dark:bg-[#0f0f0f]/80 border-b border-zinc-200 dark:border-zinc-800">
-        <div className="max-w-screen-lg mx-auto px-8 py-4 flex items-center justify-between">
+        <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-3 md:py-4 flex items-center justify-between">
           <Link 
             href="/"
             className="group inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors duration-300"
@@ -56,13 +56,13 @@ export default function PublicationsPage() {
         </div>
       </header>
 
-      <div className="max-w-screen-lg mx-auto px-8 py-16">
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-16">
 
         {/* Page Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <BookOpen size={28} className="text-zinc-700 dark:text-zinc-300" />
-            <h1 className="font-serif text-3xl md:text-4xl text-zinc-900 dark:text-white">
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <BookOpen size={24} className="md:w-7 md:h-7 text-zinc-700 dark:text-zinc-300" />
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl text-zinc-900 dark:text-white">
               Publications
             </h1>
           </div>
@@ -72,28 +72,28 @@ export default function PublicationsPage() {
           </p>
           
           {/* Stats bar */}
-          <div className="flex flex-wrap items-center gap-6 py-6 px-6 bg-gradient-to-r from-zinc-50 to-blue-50/30 dark:from-zinc-900 dark:to-blue-900/20 rounded-xl border border-zinc-100 dark:border-zinc-800 shadow-sm">
+          <div className="flex flex-wrap items-center gap-4 md:gap-6 py-4 md:py-6 px-4 md:px-6 bg-gradient-to-r from-zinc-50 to-blue-50/30 dark:from-zinc-900 dark:to-blue-900/20 rounded-xl border border-zinc-100 dark:border-zinc-800 shadow-sm">
             <div className="flex flex-col">
-              <span className="text-3xl font-serif text-zinc-900 dark:text-white">{publicationData.length}</span>
-              <span className="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Publications</span>
+              <span className="text-2xl md:text-3xl font-serif text-zinc-900 dark:text-white">{publicationData.length}</span>
+              <span className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Publications</span>
             </div>
-            <div className="w-px h-12 bg-zinc-200 dark:bg-zinc-700" />
+            <div className="w-px h-10 md:h-12 bg-zinc-200 dark:bg-zinc-700" />
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <Quote size={16} className="text-blue-500" />
-                <span className="text-3xl font-serif text-zinc-900 dark:text-white">{totalCitations}</span>
+                <Quote size={14} className="md:w-4 md:h-4 text-blue-500" />
+                <span className="text-2xl md:text-3xl font-serif text-zinc-900 dark:text-white">{totalCitations}</span>
               </div>
-              <span className="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Total Citations</span>
+              <span className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Total Citations</span>
             </div>
             {aboutMe.googleScholarUrl && (
               <a 
                 href={aboutMe.googleScholarUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2 bg-white dark:bg-zinc-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300 ml-auto btn-shine"
+                className="group flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white dark:bg-zinc-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300 ml-auto btn-shine"
               >
-                <span className="text-sm text-zinc-700 dark:text-zinc-300 group-hover:text-blue-700 dark:group-hover:text-blue-400">Google Scholar</span>
-                <ExternalLink size={14} className="text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                <span className="text-xs md:text-sm text-zinc-700 dark:text-zinc-300 group-hover:text-blue-700 dark:group-hover:text-blue-400">Google Scholar</span>
+                <ExternalLink size={12} className="md:w-3.5 md:h-3.5 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
               </a>
             )}
           </div>
@@ -106,12 +106,12 @@ export default function PublicationsPage() {
             return (
               <section key={year}>
                 {/* Year header */}
-                <div className="flex items-center gap-4 mb-4 sticky top-16 bg-[#FFFCF8] dark:bg-[#0f0f0f] py-2 z-10">
-                  <h2 className="text-lg font-semibold text-zinc-900 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-4 py-1 rounded-full">
+                <div className="flex items-center gap-2 md:gap-4 mb-4 sticky top-12 md:top-16 bg-[#FFFCF8] dark:bg-[#0f0f0f] py-2 z-10">
+                  <h2 className="text-base md:text-lg font-semibold text-zinc-900 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-3 md:px-4 py-1 rounded-full">
                     {year}
                   </h2>
                   <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
-                  <span className="text-sm text-zinc-400">
+                  <span className="text-xs md:text-sm text-zinc-400 dark:text-zinc-500">
                     {yearPubs.length} paper{yearPubs.length !== 1 ? 's' : ''}
                   </span>
                 </div>

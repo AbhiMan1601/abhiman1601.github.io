@@ -31,7 +31,7 @@ export function CitationEntry({ publication, index }: CitationEntryProps) {
           {isMe ? (
             <span className="font-semibold text-zinc-900 dark:text-white">{author.trim()}</span>
           ) : (
-            <span>{author.trim()}</span>
+            <span className="text-zinc-600 dark:text-zinc-400">{author.trim()}</span>
           )}
           {idx < arr.length - 1 && ', '}
         </span>
@@ -40,9 +40,9 @@ export function CitationEntry({ publication, index }: CitationEntryProps) {
   };
 
   return (
-    <div className="group relative pl-10 py-5 hover:bg-gradient-to-r hover:from-blue-50/50 dark:hover:from-blue-900/20 hover:to-transparent rounded-lg transition-all duration-300 border-l-2 border-transparent hover:border-blue-400">
+    <div className="group relative pl-8 md:pl-10 py-4 md:py-5 hover:bg-gradient-to-r hover:from-blue-50/50 dark:hover:from-blue-900/20 hover:to-transparent rounded-lg transition-all duration-300 border-l-2 border-transparent hover:border-blue-400">
       {/* Citation number */}
-      <span className="absolute left-2 top-5 text-sm text-zinc-300 dark:text-zinc-600 group-hover:text-blue-400 font-mono transition-colors duration-300">
+      <span className="absolute left-1 md:left-2 top-4 md:top-5 text-xs md:text-sm text-zinc-300 dark:text-zinc-600 group-hover:text-blue-400 font-mono transition-colors duration-300">
         [{index}]
       </span>
       
