@@ -7,6 +7,12 @@ export interface News {
 
 export const newsData: News[] = [
   {
+    date: "December 2025",
+    title: "Paper Accepted to Financial Cryptography 2026, St. Kitts and Nevis",
+    description: "\"On Sybil Proofness in Competitive Combinatorial Exchanges\" has been accepted as a poster at Financial Cryptography and Data Security 2025. I will be presenting this work in St. Kitts and Nevis in March 2026!",
+    link: "https://arxiv.org/abs/2512.10203",
+  },
+  {
     date: "November 2025",
     title: "Talk at DeFi Security Summit, Buenos Aires, Argentina",
     description: "Even small market search frictions can create monopoly power and enable insurance-driven attack vectors in DeFi. Will speak at DSS about how Diamond's Paradox and coverage markets introduce systemic risks, with Lido as a case study.",

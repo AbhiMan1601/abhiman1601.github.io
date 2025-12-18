@@ -23,7 +23,11 @@ export const aboutMe: AboutMe = {
   institution: "University of Alberta",
   // Note that links work in the description
   description:
-    "I'm a MITACS Fellow under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences, University of Alberta, Canada. I was Chief Scientist at Antler-backed Chainrisk Labs back in the old days where I was leading innovation in preventing economic exploits and attacks in decentralized markets. After that I joined Pantera Capital's Hedge Fund TanX as Lead Risk Simulations to help traders make better decisions on the floor.",
+    "I am a MITACS Research Fellow working with Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences, University of Alberta. My research focuses on <strong>mechanism design</strong>, <strong> algorithmic game theory</strong>, and <strong>economic security</strong> in decentralized systems." +
+    "<br><br>" +
+    "Previously, I served as Chief Scientist at Chainrisk Labs (Antler-backed), where I led research on formal verification of DeFi protocols and economic attack prevention. I also worked as Lead Risk Simulations at TanX (Pantera Capital), developing quantitative risk models for trading infrastructure." +
+    "<br><br>" +
+    "My current work applies stochastic processes and game-theoretic methods to analyze security properties of blockchain protocols, with a particular interest in restaking mechanisms, governance systems, and multi-agent coordination problems including AI.",
   email: "nag1[at]ualberta[dot]ca",
   imageUrl:"https://i.ibb.co/RGG1gyHT/unnamed.jpg",
   googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",

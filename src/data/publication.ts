@@ -1,5 +1,6 @@
 export interface Publication {
   year: string;
+  month?: number; // 1-12 for sorting purposes
   conference: string;
   title: string;
   authors: string;
@@ -9,51 +10,109 @@ export interface Publication {
   tldr?: string;
   imageUrl?: string;
   award?: string;
+  citations?: number;
+}
+
+// Helper function to sort publications by date (newest first)
+export function sortPublicationsByDate(publications: Publication[]): Publication[] {
+  return [...publications].sort((a, b) => {
+    const yearDiff = parseInt(b.year) - parseInt(a.year);
+    if (yearDiff !== 0) return yearDiff;
+    // If same year, sort by month (newer months first)
+    const monthA = a.month || 6; // Default to June
+    const monthB = b.month || 6;
+    return monthB - monthA;
+  });
+}
+
+// Helper function to format citation in academic style
+export function formatCitation(pub: Publication): string {
+  const authors = pub.authors;
+  const title = pub.title;
+  const venue = pub.conference;
+  const year = pub.year;
+  
+  return `${authors}. "${title}." ${venue}, ${year}.`;
 }
 
 export const publicationData: Publication[] = [
   {
-      year: "2025",
-      conference: "New Preprint",
-      title: "A Coincidence of Wants Mechanism for Swap Trade Execution in Decentralized Exchanges",
-      authors: "Abhimanyu Nag, Madhur Prabhakar, Tanuj Behl",
-      paperUrl: "https://arxiv.org/abs/2507.10149",
-      tldr: "We propose a mathematically rigorous framework for identifying and completing Coincidence of Wants (CoW) cycles in decentralized exchange (DEX) aggregators. Unlike existing auction based systems such as CoWSwap, our approach introduces an asset matrix formulation that not only verifies feasibility using oracle prices and formal conservation laws but also completes partial CoW cycles of swap orders that are discovered using graph traversal and are settled using imbalance correction. We define bridging orders and show that the resulting execution is slippage free and capital preserving for LPs. Applied to real world Arbitrum swap data, our algorithm demonstrates efficient discovery of CoW cycles and supports the insertion of synthetic orders for atomic cycle closure. This work can be thought of as the detailing of a potential delta-neutral strategy by liquidity providing market makers: a structured CoW cycle execution.",
-    },
+    year: "2025",
+    month: 7,
+    conference: "arXiv Preprint",
+    title: "A Coincidence of Wants Mechanism for Swap Trade Execution in Decentralized Exchanges",
+    authors: "Abhimanyu Nag, Madhur Prabhakar, Tanuj Behl",
+    paperUrl: "https://arxiv.org/abs/2507.10149",
+  },
   {
     year: "2025",
+    month: 12,
+    conference: "Financial Cryptography and Data Security (FC) 2025",
+    title: "On Sybil Proofness in Competitive Combinatorial Exchange",
+    authors: "Abhimanyu Nag",
+    paperUrl: "https://arxiv.org/abs/2512.10203",
+    award: "Poster Presentation",
+  },
+  {
+    year: "2025",
+    month: 5,
     conference: "Mathematical Research in Blockchain Economy (MARBLE)",
     title: "Economic Security of Multiple Shared Security Protocols",
     authors: "Abhimanyu Nag, Dhruv Bodani, Abhishek Kumar",
     paperUrl: "https://arxiv.org/abs/2505.03843",
-    tldr: "As restaking protocols gain adoption across blockchain ecosystems, there is a need for Actively Validated Services (AVSs) to span multiple Shared Security Providers (SSPs). This leads to stake fragmentation which introduces new complications where an adversary may compromise an AVS by targeting its weakest SSP. In this paper, we formalize the Multiple SSP Problem and analyze two architectures : an isolated fragmented model called Model M and a shared unified model called Model S, through a convex optimization and game-theoretic lens. We derive utility bounds, attack cost conditions, and market equilibrium that describes protocol security for both models. Our results show that while Model M offers deployment flexibility, it inherits lowest-cost attack vulnerabilities, whereas Model S achieves tighter security guarantees through single validator sets and aggregated slashing logic. We conclude with future directions of work including an incentive-compatible stake rebalancing allocation in restaking ecosystems.",
+    citations: 3,
     award: "Seminal work in multiple restaking security protocols",
   },
-  // {
-  //   year: "2025",
-  //   conference: "arXiv Preprint",
-  //   title: "A Coincidence of Wants Mechanism for Swap Trade Execution in Decentralized Exchanges",
-  //   authors: "Abhimanyu Nag",
-  //   paperUrl: "https://arxiv.org/abs/2507.10149",
-  //   tldr: "Novel mechanism design for efficient swap trade execution in DEXs using coincidence of wants principles.",
-  // },
   {
     year: "2025",
-    conference: "Accepted to AI in Finance workshop, European Conference on Artificial Intelligence (ECAI)",
+    month: 3,
+    conference: "arXiv Preprint",
+    title: "On-Chain Credit Risk Score in Decentralized Finance",
+    authors: "Rik Ghosh, Arka Datta, Vidhi Aggarwal, Sudipan Sinha, Abhimanyu Nag",
+    paperUrl: "https://arxiv.org/",
+    citations: 1,
+  },
+  {
+    year: "2025",
+    month: 1,
+    conference: "Bachelor's Thesis at University of Alberta",
+    title: "Detecting Healthcare Insurance Fraud Using Markov Observation Model",
+    authors: "Michael D. Gyimah, Abhimanyu Nag",
+    paperUrl: "https://ualberta.scholaris.ca/items/5548748e-53b5-4cf1-9bba-c2a77486a45e",
+  },
+  {
+    year: "2025",
+    month: 2,
+    conference: "AI in Finance workshop, ECAI 2025",
     title: "Multi Agent Influence Diagrams for DeFi Governance",
     authors: "Abhimanyu Nag, Samrat Gupta, Sudipan Sinha, Arka Datta",
     paperUrl: "https://arxiv.org/abs/2402.15037",
-    tldr: "Decentralized Finance (DeFi) governance models have become increasingly complex due to the involvement of numerous independent agents, each with their own incentives and strategies. To effectively analyze these systems, we propose using Multi Agent Influence Diagrams (MAIDs) as a powerful tool for modeling and studying the strategic interactions within DeFi governance. MAIDs allow for a comprehensive representation of the decision-making processes of various agents, capturing the influence of their actions on one another and on the overall governance outcomes. In this paper, we study a simple governance game that approximates real governance protocols and compute the Nash equilibria using MAIDs. We further outline the structure of a MAID in MakerDAO.",
-    // award: "Seminal work in multi-agent influence diagrams for governance protocol analysis",
-
+    citations: 2,
+  },
+  {
+    year: "2024",
+    month: 10,
+    conference: "arXiv Preprint",
+    title: "Compound V3 Economic Audit Report",
+    authors: "Rik Ghosh, Samrat Gupta, Arka Datta, Abhimanyu Nag, Sudipan Sinha",
+    paperUrl: "https://arxiv.org/abs/2410.04085",
+  },
+  {
+    year: "2024",
+    month: 2,
+    conference: "CoRR",
+    title: "Analyzing Games in Maker Protocol Part One: A Multi-Agent Influence Diagram Approach Towards Coordination",
+    authors: "Abhimanyu Nag, Samrat Gupta, Sudipan Sinha, Arka Datta",
+    paperUrl: "https://arxiv.org/abs/2402.15037",
+    citations: 1,
   },
   {
     year: "2022",
+    month: 6,
     conference: "Ethereum Yellow Paper",
     title: "Ethereum Improvement Proposal 5133",
     authors: "Tomasz Stanczak, Eric Marti Haynes, Josh Klopfenstein, Abhimanyu Nag",
     paperUrl: "https://eips.ethereum.org/EIPS/eip-5133",
-    tldr: "Accurately predicted ETH's difficulty bomb delay, cited in the Ethereum Yellow Paper.",
     award: "Cited in Ethereum Yellow Paper",
   },
 ];
