@@ -26,10 +26,10 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   }
 
   return (
-    <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
+    <div className="md:sticky top-8 flex flex-row-reverse md:flex-col gap-4 md:space-y-4">
       {aboutMe.imageUrl && (
         <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[55vh] md:w-[85%] aspect-[3/4] profile-image-glow">
+          <div className="relative max-h-[35vh] md:w-[70%] aspect-[4/5] profile-image-glow">
             <Image
               src={aboutMe.imageUrl}
               alt={aboutMe.name}
@@ -41,21 +41,21 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
         </div>
       )}
       <div className="w-2/3 md:w-full">
-        <h1 className="font-serif text-3xl font-light tracking-wide mb-3 text-zinc-900 dark:text-white">
+        <h1 className="font-serif text-2xl font-light tracking-wide mb-2 text-zinc-900 dark:text-white">
           {aboutMe.name}
         </h1>
         {aboutMe.altName && (
-          <p className="text-zinc-600 dark:text-zinc-400 text-md leading-relaxed tracking-wide mb-6">
+          <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed tracking-wide mb-3">
             {aboutMe.altName}
           </p>
         )}
-        <p className="text-zinc-600 dark:text-zinc-400 text-xs leading-relaxed tracking-wide uppercase mb-6">
+        <p className="text-zinc-600 dark:text-zinc-400 text-xs leading-relaxed tracking-wide uppercase mb-4">
           {aboutMe.title}
           <br />
           {aboutMe.institutionUrl ? (
             <a
               href={aboutMe.institutionUrl}
-              className="hover:text-zinc-900 transition-colors duration-300"
+              className="hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -66,135 +66,119 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           )}
         </p>
         {/* Section Navigation */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           <Link
             href="/publications"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <BookOpen size={11} />
+            <BookOpen size={10} />
             <span className="tracking-wider uppercase font-medium">Publications</span>
           </Link>
           <a
             href="https://functor.network/user/3197/entries"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <FileText size={11} />
+            <FileText size={10} />
             <span className="tracking-wider uppercase font-medium">Blog</span>
           </a>
           <a
             href="#talks"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <Video size={11} />
+            <Video size={10} />
             <span className="tracking-wider uppercase font-medium">Talks</span>
           </a>
           <a
             href="#news"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <Newspaper size={11} />
+            <Newspaper size={10} />
             <span className="tracking-wider uppercase font-medium">News</span>
           </a>
           <a
             href="#experience"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <Briefcase size={11} />
+            <Briefcase size={10} />
             <span className="tracking-wider uppercase font-medium">Experience</span>
           </a>
           <a
             href="#code"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
+            className="group inline-flex items-center gap-1 px-2.5 py-1 text-[10px] bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white rounded-full transition-all duration-300"
           >
-            <Code size={11} />
+            <Code size={10} />
             <span className="tracking-wider uppercase font-medium">Code</span>
           </a>
         </div>
         
-        {/* External Links */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          {aboutMe.cvUrl && (
-            <a
-              href={aboutMe.cvUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
-              <span className="tracking-wider uppercase">CV</span>
-            </a>
-          )}
-        </div>
-        <div className="space-y-2">
+        {/* Contact & Social - Compact Layout */}
+        <div className="space-y-1.5 text-xs">
           <a
             href={`mailto:${aboutMe.email}`}
-            className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
-            <Mail size={14} />
+            <Mail size={12} />
             {aboutMe.email}
           </a>
           {aboutMe.googleScholarUrl && (
-            <>
-              <br />
-              <a
-                href={aboutMe.googleScholarUrl}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GraduationCap size={14} />
-                Google Scholar
-              </a>
-            </>
+            <a
+              href={aboutMe.googleScholarUrl}
+              className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GraduationCap size={12} />
+              Google Scholar
+            </a>
           )}
-          {aboutMe.twitterUsername && (
-            <>
-              <br />
+          <div className="flex flex-wrap gap-3 pt-1">
+            {aboutMe.twitterUsername && (
               <a
                 href={`https://twitter.com/${aboutMe.twitterUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Twitter"
               >
-                <Twitter size={14} />@{aboutMe.twitterUsername}
+                <Twitter size={14} />
               </a>
-            </>
-          )}
-          {aboutMe.githubUsername && (
-            <>
-              <br />
+            )}
+            {aboutMe.githubUsername && (
               <a
                 href={`https://github.com/${aboutMe.githubUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="GitHub"
               >
                 <Github size={14} />
-                github.com/{aboutMe.githubUsername}
               </a>
-            </>
-          )}
-          {aboutMe.linkedinUsername && (
-            <>
-              <br />
+            )}
+            {aboutMe.linkedinUsername && (
               <a
                 href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="LinkedIn"
               >
                 <Linkedin size={14} />
-                linkedin.com/in/{aboutMe.linkedinUsername}
               </a>
-            </>
-          )}
+            )}
+            {aboutMe.cvUrl && (
+              <a
+                href={aboutMe.cvUrl}
+                className="text-zinc-500 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="CV"
+              >
+                <ArrowUpRight size={14} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

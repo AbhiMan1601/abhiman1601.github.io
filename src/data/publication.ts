@@ -47,7 +47,7 @@ export const publicationData: Publication[] = [
   {
     year: "2025",
     month: 12,
-    conference: "Financial Cryptography and Data Security (FC) 2025",
+    conference: "Financial Cryptography and Data Security (FC) 2026",
     title: "On Sybil Proofness in Competitive Combinatorial Exchange",
     authors: "Abhimanyu Nag",
     paperUrl: "https://arxiv.org/abs/2512.10203",

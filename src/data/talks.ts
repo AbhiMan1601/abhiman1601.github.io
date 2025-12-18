@@ -22,3 +22,4 @@ export const talksData: Talk[] = [
     description: "First iteration research proposal talk on \"Security and Mechanism Design in DeAI\" by me at Yale University in 2025.",
   },
 ];
+
