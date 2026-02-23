@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, BookOpen, Quote } from "lucide-react";
+import { ArrowLeft, BookOpen } from "lucide-react";
 import { CitationEntry } from "@/components/citation-entry";
 import { publicationData, sortPublicationsByDate } from "@/data/publication";
 import { aboutMe } from "@/data/aboutme";
@@ -28,9 +28,6 @@ export default function PublicationsPage() {
 
   // Sort years in descending order
   const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) - parseInt(a));
-
-  // Calculate total citations
-  const totalCitations = publicationData.reduce((sum, pub) => sum + (pub.citations || 0), 0);
 
   // Track global index for citation numbering
   let globalIndex = 1;
