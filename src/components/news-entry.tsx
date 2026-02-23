@@ -1,4 +1,4 @@
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { News } from "@/data/news";
 
 export function NewsEntry({ news }: { news: News }) {
@@ -9,12 +9,6 @@ export function NewsEntry({ news }: { news: News }) {
         <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
           {news.date}
         </span>
-        {news.date.includes("2025") && news.date.includes("December") && (
-          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs rounded-full">
-            <Sparkles size={10} />
-            New
-          </span>
-        )}
       </div>
       
       {/* Title */}
