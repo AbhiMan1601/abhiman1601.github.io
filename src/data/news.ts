@@ -7,21 +7,16 @@ export interface News {
 
 export const newsData: News[] = [
   {
+    date: "February 2026",
+    title: "My book chapter in Mathematical Research in Blockchain Economy (MARBLE) 2025 is out now!",
+    description: "\"Economic Security of Multiple Shared Security Protocols\" has been published in the proceedings of MARBLE 2025 which has been published by Springer Nature. The full chapter can be accessed by clicking on the banner!",
+    link: "https://link.springer.com/chapter/10.1007/978-3-032-13377-9_8",
+  },
+  {
     date: "December 2025",
     title: "Paper Accepted to Financial Cryptography 2026, St. Kitts and Nevis",
     description: "\"On Sybil Proofness in Competitive Combinatorial Exchanges\" has been accepted as a poster at Financial Cryptography and Data Security 2025. I will be presenting this work in St. Kitts and Nevis in March 2026!",
     link: "https://arxiv.org/abs/2512.10203",
-  },
-  {
-    date: "November 2025",
-    title: "Talk at DeFi Security Summit, Buenos Aires, Argentina",
-    description: "Even small market search frictions can create monopoly power and enable insurance-driven attack vectors in DeFi. Will speak at DSS about how Diamond's Paradox and coverage markets introduce systemic risks, with Lido as a case study.",
-  },
-  {
-    date: "October 2025",
-    title: "Open-Sourced Attack Simulation Toolkit for Ethereum PoS",
-    description: "Released simulation framework demonstrating unattributable faults (UF) in Ethereum's Proof-of-Stake consensus, attacks where everyone loses stake but no one can be blamed. The toolkit proves why traditional insurance mechanisms catastrophically fail under perfectly correlated losses. Full cryptoeconomic models included.",
-    link: "https://github.com/AbhiMan1601/attack_insurance",
   },
   {
     date: "August 2025",

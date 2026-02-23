@@ -23,13 +23,14 @@ export const aboutMe: AboutMe = {
   institution: "University of Alberta",
   // Note that links work in the description
   description:
-    "I am a MITACS Research Fellow working with Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences, University of Alberta. My research focuses on <strong>mechanism design</strong>, <strong> algorithmic game theory</strong>, and <strong>economic security</strong> in decentralized systems." +
+    "I am currently a <strong>MITACS Fellow</strong> working with Dr. Michael Kouritzin at the <strong>Department of Mathematical and Statistical Sciences, University of Alberta</strong> to develop innovative technology for educational platforms. I am also an advising <strong>Quantitative Research Scientist</strong> at <strong>Catalysis Labs</strong> to develop pricing algorithms for DeFi insurance." +
     "<br><br>" +
-    "Previously, I served as Chief Scientist at Chainrisk Labs (Antler-backed), where I led research on formal verification of DeFi protocols and economic attack prevention. I also worked as Lead Risk Simulations at TanX (Pantera Capital), developing quantitative risk models for trading infrastructure." +
+    "Previously, I used to work in the industry in Financial Risk Management, particularly in Decentralized Finance (DeFi). I started my career at <strong>Nethermind</strong> as a Data Scientist and most recently I served as <strong>Chief Scientist at Chainrisk Labs (Antler-backed)</strong>, where I led research and advised our clients on DeFi risk parameters, formal verification of DeFi protocols and economic attack prevention. Before coming back to UAlberta, I also had a brief stint at <strong>Pantera Capital's hedge fund TanX</strong> as Lead Risk Simulations where I was leading the development of quantitative risk models for trading decisions." +
     "<br><br>" +
-    "My current work applies stochastic processes and game-theoretic methods to analyze security properties of blockchain protocols, with a particular interest in restaking mechanisms, governance systems, and multi-agent coordination problems including AI.",
+    "My industry research has focused on <em>risk modelling</em>, <em>algorithmic game theory</em>, and <em>economic security</em> in decentralized systems. My current work is in modelling Sybil attacks in competitive markets (see <a href=\"https://arxiv.org/abs/2512.10203\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:text-blue-600 dark:hover:text-blue-400 transition-colors\">recent paper</a>) and analyzing security properties of decentralized protocols, with a particular interest in secure market design in blockchain transaction fee mechanisms, governance systems, and multi-agent coordination problems in AI.",
   email: "nag1[at]ualberta[dot]ca",
-  imageUrl:"https://i.ibb.co/RGG1gyHT/unnamed.jpg",
+  imageUrl:"https://i.ibb.co/Tqg8N6y1/Headshot.jpg",
+  // "https://i.ibb.co/RGG1gyHT/unnamed.jpg", 
   googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",
   githubUsername: "AbhiMan1601",
   linkedinUsername: "abhimanyu-nag-682747201",
@@ -38,5 +39,5 @@ export const aboutMe: AboutMe = {
   // cvUrl: "https://",
   institutionUrl: "https://www.ualberta.ca",
   // altName: "",
-  funDescription: "Security and Risk Management • Stochastic Processes • Dynamical Systems • Algorithmic Game Theory • Mechanism Design • Information Economics • Contract Theory • Differential Privacy • Economics of Security",
+  funDescription: "Risk Management •  Algorithmic Game Theory • Market Design • Economics of Security • Decentralized Finance (DeFi) • Blockchain • AI Safety",
 };

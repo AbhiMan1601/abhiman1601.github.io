@@ -67,36 +67,8 @@ export default function PublicationsPage() {
             </h1>
           </div>
           <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
-            My research publications in market design, stochastic processes, algorithmic game theory, 
-            mechanism design, and decentralized finance. See Google Scholar for an upto date list of my publications
+            See Google Scholar for an upto date list of my publications
           </p>
-          
-          {/* Stats bar */}
-          <div className="flex flex-wrap items-center gap-4 md:gap-6 py-4 md:py-6 px-4 md:px-6 bg-gradient-to-r from-zinc-50 to-blue-50/30 dark:from-zinc-900 dark:to-blue-900/20 rounded-xl border border-zinc-100 dark:border-zinc-800 shadow-sm">
-            <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-serif text-zinc-900 dark:text-white">{publicationData.length}</span>
-              <span className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Publications</span>
-            </div>
-            <div className="w-px h-10 md:h-12 bg-zinc-200 dark:bg-zinc-700" />
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <Quote size={14} className="md:w-4 md:h-4 text-blue-500" />
-                <span className="text-2xl md:text-3xl font-serif text-zinc-900 dark:text-white">{totalCitations}</span>
-              </div>
-              <span className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Total Citations</span>
-            </div>
-            {aboutMe.googleScholarUrl && (
-              <a 
-                href={aboutMe.googleScholarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-white dark:bg-zinc-800 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300 ml-auto btn-shine"
-              >
-                <span className="text-xs md:text-sm text-zinc-700 dark:text-zinc-300 group-hover:text-blue-700 dark:group-hover:text-blue-400">Google Scholar</span>
-                <ExternalLink size={12} className="md:w-3.5 md:h-3.5 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-              </a>
-            )}
-          </div>
         </div>
 
         {/* Publications by year - Citation Format */}

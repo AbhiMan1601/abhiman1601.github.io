@@ -14,7 +14,7 @@ export const experienceData: Experience[] = [
     title: "MITACS Fellow",
     company: "University of Alberta",
     description:
-      "Research in Mathematical Statistics for Financial Markets and Education Parameter Estimation under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences.",
+      "Research in Mathematical Statistics for Education Parameter Estimation under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences.",
     advisor: "Dr. Michael Kouritzin",
     companyUrl: "https://www.ualberta.ca",
   },
