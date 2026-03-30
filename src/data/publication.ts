@@ -47,7 +47,7 @@ export const publicationData: Publication[] = [
   {
     year: "2025",
     month: 12,
-    conference: "Working paper under review",
+    conference: "IEEE International Conference on Blockchain and Cryptocurrency (ICBC) 2026",
     title: "SoK: Speedy Secure Finality",
     authors: "Yash Saraswat, Abhimanyu Nag",
     paperUrl: "https://arxiv.org/abs/2512.20715",

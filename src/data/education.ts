@@ -19,7 +19,7 @@ export const educationData: Education[] = [
     year: "2025",
     institution: "Duke University",
     degree: "COMPSCI 584: Foundations of Blockchains",
-    advisor: "Invited by Prof Kartik Nayak to audit the course as a guest professional student",
+    advisor: "Invited by Prof Kartik Nayak to audit the course as a guest student",
   },
   // {
   //   year: "2017—2021",
