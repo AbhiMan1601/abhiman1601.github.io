@@ -31,7 +31,7 @@ export const experienceData: Experience[] = [
     company: "Chainrisk Labs",
     description:
       "Led innovation in preventing economic exploits and attacks in decentralized markets at this Antler-backed startup. Developed governance attack prediction on Compound Finance using Multi-Agent Influence Diagrams (presented at ETH Tokyo & Coinfest Bali).",
-    companyUrl: "https://chainrisk.io",
+    companyUrl: "https://chainrisk.xyz",
   },
   {
     date: "2022-2023",
