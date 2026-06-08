@@ -23,7 +23,7 @@ export const aboutMe: AboutMe = {
   institution: "University of Alberta",
   // Note that links work in the description
   description:
-    "<div style=\"border: 2px solid #1f2937; padding: 1.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, rgba(31, 41, 55, 0.08) 0%, rgba(55, 65, 81, 0.04) 100%); margin-bottom: 1.5rem;\" class=\"dark:border-[#d1d5db] dark:bg-gradient-to-br dark:from-[rgba(209,213,219,0.12)] dark:to-[rgba(209,213,219,0.04)]\"><strong style=\"font-size: 1.05em; line-height: 1.6;\" class=\"text-gray-900 dark:text-gray-200\"> I am currently on a career sabbatical for family and health. Will resume next year. Feel free to reach out still.</strong></div>" +
+    "<div style=\"border: 2px solid #1f2937; padding: 1.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, rgba(31, 41, 55, 0.08) 0%, rgba(55, 65, 81, 0.04) 100%); margin-bottom: 1.5rem;\" class=\"dark:border-[#d1d5db] dark:bg-gradient-to-br dark:from-[rgba(209,213,219,0.12)] dark:to-[rgba(209,213,219,0.04)]\"><strong style=\"font-size: 1.05em; line-height: 1.6;\" class=\"text-gray-900 dark:text-gray-200\"> I will go on a career sabbatical for family and health from July 2026 onwards. Will resume next year.</strong></div>" +
     "<br>" +
     "I have been a <strong>MITACS Fellow</strong> working with Dr. Michael Kouritzin at the <strong>Department of Mathematical and Statistical Sciences, University of Alberta</strong> to develop innovative technology for <strong>Muchlearning</strong> where I served concurrently as <strong>Engineering Manager</strong> since February 2026. I was also an advising <strong>Quantitative Research Scientist</strong> at <strong>Catalysis Labs</strong> to develop pricing algorithms for DeFi insurance." +
     "<br><br>" + 
