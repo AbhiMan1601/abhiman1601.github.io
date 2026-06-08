@@ -10,6 +10,14 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    date: "February 2026 - Present",
+    title: "Engineering Manager",
+    company: "Muchlearning Canada",
+    description:
+      "Transitioned to Engineering Manager role at Muchlearning. Lead a team of engineers and oversaw the development and production of our Learning Management System using industry tools such as node.js for development, CICD best practices for production pipelines, AWS tools for database management and infrastructure tooling.",
+    companyUrl: "muchlearning.org",
+  },
+  {
     date: "July 2025 - Present",
     title: "MITACS Fellow",
     company: "University of Alberta",

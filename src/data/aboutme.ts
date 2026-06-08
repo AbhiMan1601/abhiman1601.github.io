@@ -19,21 +19,21 @@ export interface AboutMe {
 
 export const aboutMe: AboutMe = {
   name: "Abhimanyu Nag",
-  title: "MITACS Fellow",
+  title: "Research and Engineering",
   institution: "University of Alberta",
   // Note that links work in the description
   description:
-    "I am currently a <strong>MITACS Fellow</strong> working with Dr. Michael Kouritzin at the <strong>Department of Mathematical and Statistical Sciences, University of Alberta</strong> to develop innovative technology for educational platforms. I am also an advising <strong>Quantitative Research Scientist</strong> at <strong>Catalysis Labs</strong> to develop pricing algorithms for DeFi insurance." +
-    "<br><br>" +
+    "<div style=\"border: 2px solid #1f2937; padding: 1.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, rgba(31, 41, 55, 0.08) 0%, rgba(55, 65, 81, 0.04) 100%); margin-bottom: 1.5rem;\" class=\"dark:border-[#d1d5db] dark:bg-gradient-to-br dark:from-[rgba(209,213,219,0.12)] dark:to-[rgba(209,213,219,0.04)]\"><strong style=\"font-size: 1.05em; line-height: 1.6;\" class=\"text-gray-900 dark:text-gray-200\"> I am currently on a career sabbatical for family and health. Will resume next year. Feel free to reach out still.</strong></div>" +
+    "<br>" +
+    "I have been a <strong>MITACS Fellow</strong> working with Dr. Michael Kouritzin at the <strong>Department of Mathematical and Statistical Sciences, University of Alberta</strong> to develop innovative technology for <strong>Muchlearning</strong> where I served concurrently as <strong>Engineering Manager</strong> since February 2026. I was also an advising <strong>Quantitative Research Scientist</strong> at <strong>Catalysis Labs</strong> to develop pricing algorithms for DeFi insurance." +
+    "<br><br>" + 
     "Previously, I used to work in the industry in Financial Risk Management, particularly in Decentralized Finance (DeFi). I started my career at <strong>Nethermind</strong> as a Data Scientist and most recently I served as <strong>Chief Scientist at Chainrisk Labs (Antler-backed)</strong>, where I led research and advised our clients on DeFi risk parameters, formal verification of DeFi protocols and economic attack prevention. Before coming back to UAlberta, I also had a brief stint at <strong>Pantera Capital's hedge fund TanX</strong> as Lead Risk Simulations where I was leading the development of quantitative risk models for trading decisions." +
+    "<br><br>" + 
+    "My industry research has focused on <em>risk modelling</em>, <em>algorithmic game theory</em>, and <em>economic security</em> in decentralized systems. My current work is in modelling Sybil attacks in competitive markets (see <a href=\"https://arxiv.org/abs/2512.10203\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">recent paper</a>) and analyzing security properties of decentralized protocols, with a particular interest in consensus engineering and secure market design in blockchain transaction fee mechanisms, governance systems, and multi-agent coordination problems in AI." +
     "<br><br>" +
-    "My industry research has focused on <em>risk modelling</em>, <em>algorithmic game theory</em>, and <em>economic security</em> in decentralized systems. My current work is in modelling Sybil attacks in competitive markets (see <a href=\"https://arxiv.org/abs/2512.10203\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">recent paper</a>) and analyzing security properties of decentralized protocols, with a particular interest in secure market design in blockchain transaction fee mechanisms, governance systems, and multi-agent coordination problems in AI." +
-    "<br><br>" +
-    "See my <a href=\"https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">Google Scholar</a> for my research publications and my <a href=\"https://functor.network/user/3197/entries\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">blog</a> for some of my more informal perspectives related to my work." +
-    "<br><br>" +
-    "<strong>Update:</strong> In addition to my fellowship, I am transitioning to an <strong>Engineering Manager</strong> role at <strong>MuchLearning, Canada</strong> starting April 2026, where I will be leading a team of engineers to build infrastructure for Educational Technology. It is different than my previous roles and I am excited about this new challenge! Feel free to reach out if you want to chat about anything related to my work or just want to say hi!",
-  email: "nag1[at]ualberta[dot]ca",
-  imageUrl:"https://i.ibb.co/Tqg8N6y1/Headshot.jpg",
+    "See my <a href=\"https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">Google Scholar</a> for my research publications and my <a href=\"https://functor.network/user/3197/entries\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">blog</a> for some of my more informal perspectives related to my work.",
+  email: "abhi[dot]nag1601[at]gmail[dot]com",
+  imageUrl:"https://i.ibb.co/XfM09fxY/Linked-In-Headshot.jpg",
   // "https://i.ibb.co/RGG1gyHT/unnamed.jpg", 
   googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",
   githubUsername: "AbhiMan1601",

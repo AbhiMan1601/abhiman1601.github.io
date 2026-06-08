@@ -7,6 +7,11 @@ export interface News {
 
 export const newsData: News[] = [
   {
+    date: "June 2026",
+    title: "Career Sabbatical",
+    description: "I am taking a career sabbatical for a year to focus on my family and health. I will be working on personal projects and will focus on writing a lot more and interacting with the world.",
+  },
+  {
     date: "March 2026",
     title: "Paper Accepted to IEEE International Conference on Blockchain and Cryptocurrency (ICBC) 2026, sponsored by the IEEE Communications Society",
     description: "Our SoK paper \"Speedy Secure Finality\" has been accepted to ICBC 2026! This paper provides a comprehensive analysis of the security and performance tradeoffs of various finality mechanisms in blockchain protocols. Looking forward to presenting this work at ICBC 2026 in Brisbane, Australia!",
