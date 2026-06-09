@@ -15,8 +15,11 @@ import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
 import { talksData } from "@/data/talks";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { FunctorFeed } from "@/components/functor-feed";
+import { fetchFunctorFeed } from "@/lib/functor-feed";
 
-export default function Home() {
+export default async function Home() {
+  const functorFeed = await fetchFunctorFeed();
   return (
     <div className="min-h-screen bg-[#FFFCF8] dark:bg-[#0f0f0f] transition-colors duration-300">
       {/* Theme Toggle */}
@@ -47,6 +50,9 @@ export default function Home() {
                 />
               </section>
             )}
+
+            {/* Functor Feed */}
+            <FunctorFeed items={functorFeed.items} error={functorFeed.error} />
 
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
