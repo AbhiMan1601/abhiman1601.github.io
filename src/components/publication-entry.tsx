@@ -16,6 +16,7 @@ export function PublicationEntry({
             alt={publication.title}
             width={160}
             height={200}
+            sizes="(min-width: 640px) 160px, 100vw"
             className="rounded-lg transition-all duration-300"
           />
         </div>

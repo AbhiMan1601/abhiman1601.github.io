@@ -35,6 +35,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               alt={aboutMe.name}
               fill
               priority
+              sizes="(min-width: 768px) 25vw, 33vw"
               className="object-cover rounded-xl shadow-lg transition-transform duration-300 hover:scale-[1.02]"
             />
           </div>

@@ -33,7 +33,7 @@ export const aboutMe: AboutMe = {
     "<br><br>" +
     "See my <a href=\"https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">Google Scholar</a> for my research publications and my <a href=\"https://functor.network/user/3197/entries\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-white transition-colors\">blog</a> for some of my more informal perspectives related to my work.",
   email: "abhi[dot]nag1601[at]gmail[dot]com",
-  imageUrl:"https://i.ibb.co/XfM09fxY/Linked-In-Headshot.jpg",
+  imageUrl:"https://i.ibb.co/8L598wwN/formalshot.png",
   // "https://i.ibb.co/RGG1gyHT/unnamed.jpg", 
   googleScholarUrl: "https://scholar.google.ca/citations?user=Nn1QQiUAAAAJ&hl=en",
   githubUsername: "AbhiMan1601",

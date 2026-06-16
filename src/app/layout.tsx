@@ -31,6 +31,7 @@ function stripTags(input: string): string {
 
 const SITE_CANONICAL_PATH = "/abhiman1601.github.io/";
 const SITE_BASE = "https://abhiman1601.github.io";
+const COPYRIGHT_YEAR = "2026";
 const siteUrl = `${SITE_BASE}${SITE_CANONICAL_PATH}`;
 const rawDescription = customMetadata.description || aboutMe.description || "";
 const metaDescription = stripTags(rawDescription).slice(0, 160);
@@ -191,7 +192,7 @@ export default function RootLayout({
           <div className="flex flex-row mx-auto max-w-7xl px-6 py-12 md:flex md:items-start md:justify-between ">
             <div className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
               <p>
-                © {new Date().getFullYear()} {aboutMe.name}
+                &copy; {COPYRIGHT_YEAR} {aboutMe.name}
               </p>
               {aboutMe.secretDescription && (
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-4">

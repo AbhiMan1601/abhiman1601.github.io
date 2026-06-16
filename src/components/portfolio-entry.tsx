@@ -12,6 +12,7 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
             alt={portfolio.title}
             width={160}
             height={200}
+            sizes="(min-width: 640px) 160px, 100vw"
             className="rounded-lg"
           />
         </div>
