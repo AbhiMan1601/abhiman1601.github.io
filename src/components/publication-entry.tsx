@@ -33,36 +33,27 @@ export function PublicationEntry({
           {publication.paperUrl && (
             <a
               href={publication.paperUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-xs text-zinc-500"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={12} />
               <span className="tracking-wider uppercase">Paper</span>
             </a>
           )}
           {publication.codeUrl && (
             <a
               href={publication.codeUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-xs text-zinc-500"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={12} />
               <span className="tracking-wider uppercase">Code</span>
             </a>
           )}
           {publication.bibtex && (
             <a
               href={publication.bibtex}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-xs text-zinc-500"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={12} />
               <span className="tracking-wider uppercase">BibTeX</span>
             </a>
           )}

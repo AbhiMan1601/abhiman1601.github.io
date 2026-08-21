@@ -33,11 +33,11 @@ export default function PublicationsPage() {
   let globalIndex = 1;
 
   return (
-    <div className="min-h-screen bg-[#FFFCF8] dark:bg-[#0f0f0f] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
       <ReadingProgress />
       
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-lg bg-[#FFFCF8]/80 dark:bg-[#0f0f0f]/80 border-b border-zinc-200 dark:border-zinc-800">
+      <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/80 dark:bg-[#0f0f0f]/80 border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-3 md:py-4 flex items-center justify-between">
           <Link 
             href="/"
@@ -75,7 +75,7 @@ export default function PublicationsPage() {
             return (
               <section key={year}>
                 {/* Year header */}
-                <div className="flex items-center gap-2 md:gap-4 mb-4 sticky top-12 md:top-16 bg-[#FFFCF8] dark:bg-[#0f0f0f] py-2 z-10">
+                <div className="flex items-center gap-2 md:gap-4 mb-4 sticky top-12 md:top-16 bg-white dark:bg-[#0f0f0f] py-2 z-10">
                   <h2 className="text-base md:text-lg font-semibold text-zinc-900 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-3 md:px-4 py-1 rounded-full">
                     {year}
                   </h2>

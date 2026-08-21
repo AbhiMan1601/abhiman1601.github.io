@@ -22,13 +22,10 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
           {portfolio.projectUrl ? (
             <a
               href={portfolio.projectUrl}
-              className="group inline-flex items-center gap-2 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-zinc-900 dark:text-white"
             >
               {portfolio.title}
-              <ArrowUpRight
-                size={16}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={16} />
             </a>
           ) : (
             portfolio.title
@@ -52,24 +49,18 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
           {portfolio.projectUrl && (
             <a
               href={portfolio.projectUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={12} />
               <span className="tracking-wider uppercase">Project</span>
             </a>
           )}
           {portfolio.codeUrl && (
             <a
               href={portfolio.codeUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400"
             >
-              <ArrowUpRight
-                size={12}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-              />
+              <ArrowUpRight size={12} />
               <span className="tracking-wider uppercase">Code</span>
             </a>
           )}

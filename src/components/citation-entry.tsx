@@ -40,26 +40,26 @@ export function CitationEntry({ publication, index }: CitationEntryProps) {
   };
 
   return (
-    <div className="group relative pl-8 md:pl-10 py-4 md:py-5 hover:bg-gradient-to-r hover:from-blue-50/50 dark:hover:from-blue-900/20 hover:to-transparent rounded-lg transition-all duration-300 border-l-2 border-transparent hover:border-blue-400">
+    <div className="relative pl-8 md:pl-10 py-4 md:py-5 rounded-lg border-l-2 border-zinc-200 dark:border-zinc-800">
       {/* Citation number */}
-      <span className="absolute left-1 md:left-2 top-4 md:top-5 text-xs md:text-sm text-zinc-300 dark:text-zinc-600 group-hover:text-blue-400 font-mono transition-colors duration-300">
+      <span className="absolute left-1 md:left-2 top-4 md:top-5 text-xs md:text-sm text-zinc-300 dark:text-zinc-600 font-mono">
         [{index}]
       </span>
-      
+
       <div className="space-y-2">
         {/* Authors */}
         <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
           {formatAuthors(publication.authors)}
         </p>
-        
+
         {/* Title with link */}
         <h3 className="font-serif text-base leading-snug">
           {publication.paperUrl ? (
-            <a 
+            <a
               href={publication.paperUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 link-underline"
+              className="text-zinc-900 dark:text-white link-underline"
             >
               &ldquo;{publication.title}&rdquo;
             </a>
@@ -67,14 +67,14 @@ export function CitationEntry({ publication, index }: CitationEntryProps) {
             <span className="text-zinc-900 dark:text-white">&ldquo;{publication.title}&rdquo;</span>
           )}
         </h3>
-        
+
         {/* Venue and Date */}
         <p className="text-sm text-zinc-500 dark:text-zinc-400">
           <span className="italic">{publication.conference}</span>
           <span className="mx-2">•</span>
           <span>{dateStr}</span>
         </p>
-        
+
         {/* Links row */}
         <div className="flex flex-wrap items-center gap-4 pt-2">
           {/* Paper link */}
@@ -83,20 +83,20 @@ export function CitationEntry({ publication, index }: CitationEntryProps) {
               href={publication.paperUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 rounded-full"
             >
               <FileText size={12} />
               <span className="font-medium">Paper</span>
             </a>
           )}
-          
+
           {/* Code link */}
           {publication.codeUrl && (
             <a
               href={publication.codeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 rounded-full"
             >
               <ExternalLink size={12} />
               <span className="font-medium">Code</span>

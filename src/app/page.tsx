@@ -18,7 +18,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FFFCF8] dark:bg-[#0f0f0f] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
       {/* Theme Toggle */}
       <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
         <ThemeToggle />
