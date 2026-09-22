@@ -1,210 +1,176 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { EducationEntry } from "@/components/education-entry";
-import { educationData } from "@/data/education";
-import { CitationEntry } from "@/components/citation-entry";
-import { publicationData, sortPublicationsByDate } from "@/data/publication";
-import { ProfileSection } from "@/components/profile-section";
+import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { BlogTitles } from "@/components/blog-titles";
 import { aboutMe } from "@/data/aboutme";
-import { NewsEntry } from "@/components/news-entry";
-import { newsData } from "@/data/news";
-import { ExperienceEntry } from "@/components/experience-entry";
+import { educationData } from "@/data/education";
 import { experienceData } from "@/data/experience";
-import { PortfolioEntry } from "@/components/portfolio-entry";
-import { portfolioData } from "@/data/portfolio";
-import { sectionOrder, Section } from "@/data/section-order";
+import { newsData } from "@/data/news";
+import { publicationData, sortPublicationsByDate } from "@/data/publication";
 import { talksData } from "@/data/talks";
-import { ThemeToggle } from "@/components/theme-toggle";
+
+const featuredPublications = sortPublicationsByDate(publicationData).slice(0, 4);
+
+function SectionHeading({ number, children }: { number: string; children: React.ReactNode }) {
+  return (
+    <div className="section-heading">
+      <span>{number}</span>
+      <h2>{children}</h2>
+      <span className="section-rule" aria-hidden="true" />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
-      {/* Theme Toggle */}
-      <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
-        <ThemeToggle />
-      </div>
-      
-      {/* Don't have a great call on whether max-w-screen-xl is better */}
-      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-24">
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
-          {/* Left Column - Fixed Info */}
-          <div className="col-span-12 md:col-span-4 space-y-12 mb-8 md:mb-0">
-            {/* Profile */}
-            <div className="md:sticky top-12 space-y-8">
-              <ProfileSection aboutMe={aboutMe} />
-            </div>
-          </div>
+    <main className="site-shell">
+      <header className="site-header">
+        <div className="signal" aria-hidden="true">= = = = = = = = = = = =</div>
+        <div className="header-row">
+          <Link href="/" className="wordmark">| {aboutMe.name.toLowerCase()}</Link>
+          <nav aria-label="Primary navigation">
+            <a href="#work">work</a>
+            <a href="#writing">writing</a>
+            <a href="#about">about</a>
+          </nav>
+        </div>
+        <div className="signal signal-right" aria-hidden="true">= = = = = = = = = = = =</div>
+      </header>
 
-          {/* Right Column - Scrolling Content */}
-          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-12 md:space-y-24">
-            {/* About section is typically first */}
-            {aboutMe.description && (
-              <section>
-                <p
-                  className="font-serif text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 [&_a]:underline [&_a]:text-zinc-900 dark:[&_a]:text-zinc-100 [&_a:hover]:text-zinc-600 dark:[&_a:hover]:text-zinc-400"
-                  dangerouslySetInnerHTML={{ __html: aboutMe.description }}
-                />
-              </section>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="kicker">Research · Engineering · Economic security</p>
+          <h1 id="hero-title">{aboutMe.name}</h1>
+          <p className="hero-role">
+            {aboutMe.title} at{" "}
+            <a href={aboutMe.institutionUrl} target="_blank" rel="noreferrer">
+              {aboutMe.institution}<ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+          </p>
+          <p className="hero-summary">
+            I study incentives, adversarial behavior, and market design in decentralized systems.
+          </p>
+          <div className="hero-links" aria-label="Contact and profiles">
+            <a href={`mailto:${aboutMe.email}`}><Mail size={14} />email</a>
+            {aboutMe.githubUsername && (
+              <a href={`https://github.com/${aboutMe.githubUsername}`} target="_blank" rel="noreferrer"><Github size={14} />github</a>
             )}
-
-            {/* Map through sectionOrder to render sections in correct order */}
-            {sectionOrder.map((sectionName) => {
-              // Most of this is redundant... but in case it needs to be unique.
-              switch (sectionName) {
-                case Section.News:
-                  return (
-                    newsData.length > 0 && (
-                      <section key={sectionName} id="news">
-                        <h2 className="font-serif text-l mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
-                          News
-                        </h2>
-                        <div className="space-y-8 md:space-y-12">
-                          {newsData.map((news, index) => (
-                            <div key={index}>
-                              <NewsEntry news={news} />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Education:
-                  return (
-                    educationData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-zinc-700 dark:text-zinc-300 mb-6 md:mb-12 tracking-wide uppercase">
-                          Education
-                        </h2>
-                        <div className="space-y-8 md:space-y-12">
-                          {educationData.map((education, index) => (
-                            <EducationEntry key={index} education={education} />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Publication:
-                  // Show only first 3 publications on home page, sorted by date
-                  const sortedPubs = sortPublicationsByDate(publicationData);
-                  const featuredPublications = sortedPubs.slice(0, 3);
-                  return (
-                    <div key={sectionName} className="space-y-12 md:space-y-24">
-                      {publicationData.length > 0 && (
-                        <section id="publications">
-                          <div className="flex items-center justify-between mb-8">
-                            <h2 className="font-serif text-l tracking-wide uppercase text-zinc-900 dark:text-white">
-                              Recent Publications
-                            </h2>
-                            <Link 
-                              href="/publications"
-                              className="group inline-flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
-                            >
-                              <span className="tracking-wider uppercase">View All</span>
-                              <ArrowRight 
-                                size={12} 
-                                className="group-hover:translate-x-1 transition-transform duration-300" 
-                              />
-                            </Link>
-                          </div>
-                          <div className="divide-y divide-zinc-100 dark:divide-zinc-800 -mx-2 md:-mx-2">
-                            {featuredPublications.map((publication, index) => (
-                              <CitationEntry 
-                                key={index} 
-                                publication={publication} 
-                                index={index + 1}
-                              />
-                            ))}
-                          </div>
-                          {publicationData.length > 3 && (
-                            <div className="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-700">
-                              <Link 
-                                href="/publications"
-                                className="group inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors duration-300"
-                              >
-                                <span>See all {publicationData.length} publications</span>
-                                <ArrowRight 
-                                  size={14} 
-                                  className="group-hover:translate-x-1 transition-transform duration-300" 
-                                />
-                              </Link>
-                            </div>
-                          )}
-                        </section>
-                      )}
-                      
-                      {/* Talks Section */}
-                      {talksData.length > 0 && (
-                        <section id="talks">
-                          <h2 className="font-serif text-l mb-6 md:mb-8 tracking-wide uppercase text-zinc-900 dark:text-white">
-                            Talks
-                          </h2>
-                          <div className="space-y-8 md:space-y-12">
-                            {talksData.map((talk, index) => (
-                              <div key={index} className="space-y-4">
-                                <div className="video-container aspect-video w-full">
-                                  <iframe
-                                    src={`https://www.youtube.com/embed/${talk.youtubeId}`}
-                                    title={talk.title}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    className="w-full h-full"
-                                  />
-                                </div>
-                                <div className="pt-2">
-                                  <h3 className="font-serif text-lg text-zinc-900 dark:text-white mb-1">{talk.title}</h3>
-                                  <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">{talk.event} • {talk.date}</p>
-                                  {talk.description && (
-                                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">{talk.description}</p>
-                                  )}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </section>
-                      )}
-                    </div>
-                  );
-                case Section.Experience:
-                  return (
-                    experienceData.length > 0 && (
-                      <section key={sectionName} id="experience">
-                        <h2 className="font-serif text-md mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
-                          Experience
-                        </h2>
-                        <div className="space-y-8 md:space-y-12">
-                          {experienceData.map((experience, index) => (
-                            <ExperienceEntry
-                              key={index}
-                              experience={experience}
-                            />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Portfolio:
-                  return (
-                    portfolioData.length > 0 && (
-                      <section key={sectionName} id="code">
-                        <h2 className="font-serif text-md mb-6 md:mb-12 tracking-wide uppercase text-zinc-900 dark:text-white">
-                          Code
-                        </h2>
-                        <div className="space-y-8 md:space-y-12">
-                          {portfolioData.map((portfolio, index) => (
-                            <PortfolioEntry key={index} portfolio={portfolio} />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                default:
-                  return null;
-              }
-            })}
+            {aboutMe.linkedinUsername && (
+              <a href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`} target="_blank" rel="noreferrer"><Linkedin size={14} />linkedin</a>
+            )}
+            {aboutMe.googleScholarUrl && (
+              <a href={aboutMe.googleScholarUrl} target="_blank" rel="noreferrer">scholar ↗</a>
+            )}
           </div>
         </div>
-      </div>
-    </div>
+        {aboutMe.imageUrl && (
+          <div className="portrait-wrap">
+            <Image
+              src={aboutMe.imageUrl}
+              alt={`Portrait of ${aboutMe.name}`}
+              width={180}
+              height={180}
+              priority
+              unoptimized
+              className="portrait"
+            />
+          </div>
+        )}
+      </section>
+
+      <section id="about" className="page-section">
+        <SectionHeading number="01">About</SectionHeading>
+        <div className="about-grid">
+          <p className="side-note">A short introduction, current work, and research interests.</p>
+          <div className="prose" dangerouslySetInnerHTML={{ __html: aboutMe.description }} />
+        </div>
+      </section>
+
+      {newsData.length > 0 && (
+        <section id="news" className="page-section">
+          <SectionHeading number="02">Updates</SectionHeading>
+          <div className="entry-grid">
+            {newsData.slice(0, 6).map((item) => (
+              <article className="flat-entry" key={`${item.date}-${item.title}`}>
+                <p className="entry-meta">{item.date}</p>
+                <h3>
+                  {item.link ? <a href={item.link} target="_blank" rel="noreferrer">{item.title} ↗</a> : item.title}
+                </h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section id="research" className="page-section">
+        <SectionHeading number="03">Selected publications</SectionHeading>
+        <div className="entry-grid publication-grid">
+          {featuredPublications.map((publication) => (
+            <article className="flat-entry" key={publication.title}>
+              <p className="entry-meta">{publication.year} · {publication.conference}</p>
+              <h3>
+                {publication.paperUrl ? <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title} ↗</a> : publication.title}
+              </h3>
+              <p>{publication.authors}</p>
+            </article>
+          ))}
+        </div>
+        <Link className="text-link" href="/publications">View all publications <span>→</span></Link>
+      </section>
+
+      <section id="writing" className="page-section">
+        <SectionHeading number="04">Latest writing</SectionHeading>
+        <BlogTitles />
+      </section>
+
+      {talksData.length > 0 && (
+        <section id="talks" className="page-section">
+          <SectionHeading number="05">Talks</SectionHeading>
+          <div className="talk-grid">
+            {talksData.map((talk) => (
+              <article key={talk.youtubeId}>
+                <div className="video-frame">
+                  <iframe src={`https://www.youtube-nocookie.com/embed/${talk.youtubeId}`} title={talk.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                </div>
+                <p className="entry-meta">{talk.event} · {talk.date}</p>
+                <h3>{talk.title}</h3>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section id="work" className="page-section">
+        <SectionHeading number="06">Experience</SectionHeading>
+        <div className="timeline-list">
+          {experienceData.map((item) => (
+            <article className="timeline-row" key={`${item.date}-${item.company}`}>
+              <p className="entry-meta">{item.date}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p className="entry-company">
+                  {item.companyUrl ? <a href={item.companyUrl} target="_blank" rel="noreferrer">{item.company} ↗</a> : item.company}
+                </p>
+                {item.description && <p>{item.description}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="education" className="page-section compact-section">
+        <SectionHeading number="07">Education</SectionHeading>
+        <div className="timeline-list">
+          {educationData.map((item) => (
+            <article className="timeline-row education-row" key={`${item.year}-${item.institution}`}>
+              <p className="entry-meta">{item.year}</p>
+              <div><h3>{item.degree}</h3><p>{item.institution}</p>{item.advisor && <p className="muted">{item.advisor}</p>}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+    </main>
   );
 }

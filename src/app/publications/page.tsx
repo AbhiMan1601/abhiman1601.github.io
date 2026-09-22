@@ -1,11 +1,7 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, BookOpen } from "lucide-react";
-import { CitationEntry } from "@/components/citation-entry";
-import { publicationData, sortPublicationsByDate } from "@/data/publication";
 import { aboutMe } from "@/data/aboutme";
-import { ReadingProgress } from "@/components/reading-progress";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { publicationData, sortPublicationsByDate } from "@/data/publication";
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -13,116 +9,42 @@ export const metadata: Metadata = {
 };
 
 export default function PublicationsPage() {
-  // Sort publications by date (newest first)
-  const sortedPublications = sortPublicationsByDate(publicationData);
-
-  // Group publications by year
-  const publicationsByYear = sortedPublications.reduce((acc, pub) => {
-    const year = pub.year;
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(pub);
-    return acc;
-  }, {} as Record<string, typeof publicationData>);
-
-  // Sort years in descending order
-  const sortedYears = Object.keys(publicationsByYear).sort((a, b) => parseInt(b) - parseInt(a));
-
-  // Track global index for citation numbering
-  let globalIndex = 1;
+  const publications = sortPublicationsByDate(publicationData);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0f0f0f] transition-colors duration-300">
-      <ReadingProgress />
-      
-      {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/80 dark:bg-[#0f0f0f]/80 border-b border-zinc-200 dark:border-zinc-800">
-        <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-3 md:py-4 flex items-center justify-between">
-          <Link 
-            href="/"
-            className="group inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors duration-300"
-          >
-            <ArrowLeft 
-              size={16} 
-              className="group-hover:-translate-x-1 transition-transform duration-300" 
-            />
-            <span>Back to Home</span>
-          </Link>
-          <ThemeToggle />
+    <main className="site-shell publications-page">
+      <header className="site-header">
+        <div className="signal" aria-hidden="true">= = = = = = = = = = = =</div>
+        <div className="header-row">
+          <Link href="/" className="wordmark">← {aboutMe.name.toLowerCase()}</Link>
+          <a href={aboutMe.googleScholarUrl} target="_blank" rel="noreferrer">google scholar ↗</a>
         </div>
+        <div className="signal signal-right" aria-hidden="true">= = = = = = = = = = = =</div>
       </header>
 
-      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-16">
+      <section className="publications-intro">
+        <p className="kicker">Research archive</p>
+        <h1>Publications</h1>
+        <p>Selected work on decentralized systems, market design, risk, and economic security.</p>
+      </section>
 
-        {/* Page Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 md:gap-3 mb-4">
-            <BookOpen size={24} className="md:w-7 md:h-7 text-zinc-700 dark:text-zinc-300" />
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl text-zinc-900 dark:text-white">
-              Publications
-            </h1>
-          </div>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
-            See Google Scholar for an upto date list of my publications
-          </p>
-        </div>
-
-        {/* Publications by year - Citation Format */}
-        <div className="space-y-12">
-          {sortedYears.map((year) => {
-            const yearPubs = publicationsByYear[year];
-            return (
-              <section key={year}>
-                {/* Year header */}
-                <div className="flex items-center gap-2 md:gap-4 mb-4 sticky top-12 md:top-16 bg-white dark:bg-[#0f0f0f] py-2 z-10">
-                  <h2 className="text-base md:text-lg font-semibold text-zinc-900 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-3 md:px-4 py-1 rounded-full">
-                    {year}
-                  </h2>
-                  <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
-                  <span className="text-xs md:text-sm text-zinc-400 dark:text-zinc-500">
-                    {yearPubs.length} paper{yearPubs.length !== 1 ? 's' : ''}
-                  </span>
-                </div>
-                
-                {/* Publications list */}
-                <div className="divide-y divide-zinc-100">
-                  {yearPubs.map((publication) => {
-                    const currentIndex = globalIndex++;
-                    return (
-                      <CitationEntry 
-                        key={currentIndex} 
-                        publication={publication} 
-                        index={currentIndex}
-                      />
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          })}
-        </div>
-
-        {/* BibTeX section */}
-        {/* <section className="mt-16 p-6 bg-zinc-50 rounded-xl border border-zinc-100">
-          <h3 className="font-serif text-lg text-zinc-900 mb-3">Citation Format</h3>
-          <p className="text-sm text-zinc-600 mb-4">
-            All publications are displayed in academic citation format. Click on any title to access the paper.
-          </p>
-          <p className="text-sm text-zinc-500 italic">
-            Citation data sourced from{" "}
-            <a 
-              href={aboutMe.googleScholarUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:text-zinc-700 transition-colors"
-            >
-              Google Scholar
-            </a>
-            . Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
-          </p>
-        </section> */}
+      <div className="publication-list">
+        {publications.map((publication, index) => (
+          <article key={publication.title} className="publication-row">
+            <p className="publication-number">[{String(index + 1).padStart(2, "0")}]</p>
+            <div>
+              <p className="entry-meta">{publication.year} · {publication.conference}</p>
+              <h2>
+                {publication.paperUrl ? (
+                  <a href={publication.paperUrl} target="_blank" rel="noreferrer">{publication.title} ↗</a>
+                ) : publication.title}
+              </h2>
+              <p>{publication.authors}</p>
+              {publication.award && <p className="publication-note">+ {publication.award}</p>}
+            </div>
+          </article>
+        ))}
       </div>
-    </div>
+    </main>
   );
 }
