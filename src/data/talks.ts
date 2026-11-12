@@ -3,10 +3,26 @@ export interface Talk {
   event: string;
   date: string;
   youtubeId: string;
+  startSeconds?: number;
   description?: string;
 }
 
 export const talksData: Talk[] = [
+  {
+    title: "Sybil Attacks on Inclusion List Mechanisms: FOCIL and AUCIL",
+    event: "Devcon 8, Mumbai",
+    date: "2026",
+    youtubeId: "YYjoPaWMjNU",
+    description: "A short talk on whether Ethereum inclusion-list mechanisms can be made inherently Sybil-proof.",
+  },
+  {
+    title: "How to Model Cryptoeconomic Attacks and Adversaries in DeFi",
+    event: "DeFi Security Summit, Mumbai",
+    date: "2026",
+    youtubeId: "rb6Zo7qIaM8",
+    startSeconds: 15597,
+    description: "A practical framework for modelling adversarial economic behavior and attacks in DeFi protocols.",
+  },
   {
     title: "MAIDs for Governance Protocols",
     event: "ETH Tokyo and Coinfest Bali",

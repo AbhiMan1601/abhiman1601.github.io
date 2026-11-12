@@ -8,13 +8,8 @@ export interface News {
 export const newsData: News[] = [
   {
     date: "November 2026",
-    title: "Talk at DeFi Security Summit 2026",
-    description: "I will be heading to Mumbai in November to give a talk on modelling adversaries in DeFi protocols and how to design robust financial primitives."
-  },
-  {
-    date: "June 2026",
-    title: "Career Sabbatical",
-    description: "I am taking a career sabbatical for a year to focus on my family and health. I will be working on personal projects and will focus on writing a lot more and interacting with the world.",
+    title: "Talks at DeFi Security Summit and Devcon 8",
+    description: "Presented work on modelling cryptoeconomic attacks in DeFi at DSS and on Sybil attacks in Ethereum inclusion-list mechanisms at Devcon 8 in Mumbai."
   },
   {
     date: "March 2026",

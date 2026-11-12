@@ -10,31 +10,29 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
-    date: "February 2026 - July 2026",
-    title: "Engineering Manager",
-    company: "Muchlearning Canada",
+    date: "July 2025—Present",
+    title: "MITACS Fellow / Engineering Manager",
+    company: "University of Alberta / MuchLearning",
     description:
       "Transitioned to Engineering Manager role at Muchlearning. Led a team of engineers and oversaw the development and production of our Learning Management System using industry tools such as node.js for development, CICD best practices for production pipelines, AWS tools for database management and infrastructure tooling.",
     companyUrl: "muchlearning.org",
   },
   {
-    date: "July 2025 - July 2026",
-    title: "MITACS Fellow",
-    company: "University of Alberta",
+    date: "January 2025—July 2026",
+    title: "Part-time Research Scientist",
+    company: "Catalysis Labs",
     description:
-      "Research in Mathematical Statistics for Education Parameter Estimation under Dr. Michael Kouritzin at the Department of Mathematical and Statistical Sciences.",
-    advisor: "Dr. Michael Kouritzin",
-    companyUrl: "https://www.ualberta.ca",
+      "Developed insurance coverage and premium algorithms for DeFi vaults using actuarial risk loading, stochastic simulation, and quantitative risk management. Co-developed an economic-security model for multiple restaking architectures published at MARBLE 2025.",
   },
   {
-    date: "2025",
-    title: "Risk Management Lead",
-    company: "Pantera Capital's TanX, YODL Exchange",
+    date: "March 2025—July 2025",
+    title: "Simulation Engineer",
+    company: "Pantera Capital's TanX",
     description:
-      "Led risk simulation strategies for Pantera Capital's Hedge Fund TanX and devised CoW order routing algorithm for Dextr (now YODL) Exchange, helping traders make better decisions on the floor."
+      "Evaluated digital-asset trading strategies using the Kelly criterion, risk-of-ruin analysis, portfolio hedging, and large-scale stochastic and quasi-Monte Carlo simulation."
   },
   {
-    date: "2023 - 2025",
+    date: "December 2023—December 2024",
     title: "Chief Scientist",
     company: "Chainrisk Labs",
     description:
@@ -42,14 +40,14 @@ export const experienceData: Experience[] = [
     companyUrl: "https://chainrisk.xyz",
   },
   {
-    date: "2022-2023",
-    title: "Protocol Economist",
-    company: "HyperspaceAI",
+    date: "September 2022—August 2023",
+    title: "Protocol Economics Researcher",
+    company: "Hyperspace Protocol",
     description:
       "Worked on incentive design on EigenLayer and optimal transaction dissemination protocols at this supercomputing L1 turned Distributed AI company."
   },
   {
-    date: "2022",
+    date: "May 2022—September 2022",
     title: "Junior Data Scientist",
     company: "Nethermind",
     description:

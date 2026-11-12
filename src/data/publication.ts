@@ -37,6 +37,13 @@ export function formatCitation(pub: Publication): string {
 
 export const publicationData: Publication[] = [
   {
+    year: "2026",
+    month: 11,
+    conference: "Working Paper",
+    title: "Sybil Proof Auction Mechanisms via Stitching",
+    authors: "Abhimanyu Nag, Yotam Gafni, Aviv Yaish",
+  },
+  {
     year: "2025",
     month: 7,
     conference: "arXiv Preprint",
@@ -45,11 +52,11 @@ export const publicationData: Publication[] = [
     paperUrl: "https://arxiv.org/abs/2507.10149",
   },
   {
-    year: "2025",
-    month: 12,
+    year: "2026",
+    month: 5,
     conference: "IEEE International Conference on Blockchain and Cryptocurrency (ICBC) 2026",
-    title: "SoK: Speedy Secure Finality",
-    authors: "Yash Saraswat, Abhimanyu Nag",
+    title: "SoK: Speedy Secure Finality for Ethereum",
+    authors: "Abhimanyu Nag, Yash Saraswat",
     paperUrl: "https://arxiv.org/abs/2512.20715",
   },
   {

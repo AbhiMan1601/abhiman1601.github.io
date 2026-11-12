@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="kicker">Research · Engineering · Economic security</p>
+          {/* <p className="kicker">Research · Engineering · Economic security</p> */}
           <h1 id="hero-title">{aboutMe.name}</h1>
           <p className="hero-role">
             {aboutMe.title} at{" "}
@@ -48,7 +48,7 @@ export default function Home() {
             </a>
           </p>
           <p className="hero-summary">
-            I study incentives, adversarial behavior, and market design in decentralized systems.
+            I study security incentives, adversarial behavior and market design in decentralized systems.
           </p>
           <div className="hero-links" aria-label="Contact and profiles">
             <a href={`mailto:${aboutMe.email}`}><Mail size={14} />email</a>
@@ -81,7 +81,7 @@ export default function Home() {
       <section id="about" className="page-section">
         <SectionHeading number="01">About</SectionHeading>
         <div className="about-grid">
-          <p className="side-note">A short introduction, current work, and research interests.</p>
+          <p className="side-note"></p>
           <div className="prose" dangerouslySetInnerHTML={{ __html: aboutMe.description }} />
         </div>
       </section>
@@ -131,7 +131,12 @@ export default function Home() {
             {talksData.map((talk) => (
               <article key={talk.youtubeId}>
                 <div className="video-frame">
-                  <iframe src={`https://www.youtube-nocookie.com/embed/${talk.youtubeId}`} title={talk.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${talk.youtubeId}${talk.startSeconds ? `?start=${talk.startSeconds}` : ""}`}
+                    title={talk.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
                 <p className="entry-meta">{talk.event} · {talk.date}</p>
                 <h3>{talk.title}</h3>

@@ -78,7 +78,7 @@ export function BlogTitles() {
 
   return (
     <div className="blog-list">
-      <p className="blog-order">All posts · newest first</p>
+      {/* <p className="blog-order"></p> */}
       <ol>
         {blogs.map((post, index) => (
           <li key={post.link}>
